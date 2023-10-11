@@ -14,4 +14,5 @@ public class TipoNotificacion : BaseEntity
     [Required]
     public DateOnly FechaModifacion { get; set; }
     public ICollection<ModuloNotificacion> ModuloNotificaciones { get; set; }
+    public ICollection<Blockchain> Blockchains { get; set; }
 }

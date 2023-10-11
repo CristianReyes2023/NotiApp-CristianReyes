@@ -5,15 +5,15 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class Auditoria : BaseEntity
+public class ModulosMaestro
 {
     [Required]
-    public string NombreUsuario { get; set; }
-    [Required]
-    public int DescAccion { get; set; }
+    public string NombreModuloMaestro { get; set; }
     [Required]
     public DateOnly FechaCreacion { get; set; }
     [Required]
     public DateOnly FechaModificacion { get; set; }
-    
+    public ICollection<RolvsMaestro> RolvsMaestros { get; set; }
+    public ICollection<MaestrosvsSubmodulos> MaestrosvsSubmodulos { get; set; }
+
 }

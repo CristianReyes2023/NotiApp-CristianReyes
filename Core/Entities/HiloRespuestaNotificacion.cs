@@ -1,12 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Core.Entities
+namespace Core.Entities;
+public class HiloRespuestaNotificacion : BaseEntity
 {
-    public class HiloRespuestaNotificacion
-    {
-        
-    }
+    [Required]
+    public string NombreHiloRespuesta { get; set; }
+    [Required]
+    public DateOnly FechaCreacion { get; set; }
+    [Required]
+    public DateOnly FechaModificacion { get; set; }
+    public ICollection<ModuloNotificacion> ModuloNotificaciones { get; set; }
+    public ICollection<Blockchain> Blockchains { get; set; }
 }
