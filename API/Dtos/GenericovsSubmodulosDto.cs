@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace API.Dtos;
-public class GenericovsSubmodulos
+public class GenericovsSubmodulosDto
 {
     public int Id { get; set; }
     public DateOnly FechaCreacion { get; set; }
