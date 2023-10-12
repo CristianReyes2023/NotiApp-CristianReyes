@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class ModuloNotificacion
+public class ModuloNotificacion : BaseEntity
 {
     [Required]
     public string AsuntoNotificacion { get; set; }
@@ -18,7 +18,7 @@ public class ModuloNotificacion
     public int IdRadicadosFk { get; set; }
     public Radicados Radicados { get; set; }
     public int IdFormatosFk { get; set; }
-    public ICollection<Formato> Formatos { get; set; }
+    public Formato Formatos { get; set; }
     public int IdTipoRequerimientoFk { get; set; }
     public TipoRequerimiento TipoRequerimientos { get; set; }
     public int IdEstadoNotificacionFk { get; set; }

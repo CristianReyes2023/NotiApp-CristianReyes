@@ -15,5 +15,6 @@ public class Auditoria : BaseEntity
     public DateOnly FechaCreacion { get; set; }
     [Required]
     public DateOnly FechaModificacion { get; set; }
+    public ICollection<Blockchain> Blockchains { get; set; }
     
 }

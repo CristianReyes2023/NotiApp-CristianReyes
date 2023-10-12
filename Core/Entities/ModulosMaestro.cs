@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class ModulosMaestro
+public class ModulosMaestro : BaseEntity
 {
     [Required]
     public string NombreModuloMaestro { get; set; }

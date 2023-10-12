@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class PermisosGenericos
+public class PermisosGenericos : BaseEntity
 {
     [Required]
     public string NombrePermiso { get; set; }

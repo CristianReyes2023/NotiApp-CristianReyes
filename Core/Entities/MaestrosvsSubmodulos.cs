@@ -15,5 +15,5 @@ public class MaestrosvsSubmodulos : BaseEntity
     public ModulosMaestro ModulosMaestros { get; set; }
     public int IdSubModulosFk { get; set; }
     public SubModulos SubModulos { get; set; }
-    public ICollection<GenericovsSubmodulos> genericovsSubmodulos { get; set; }
+    public ICollection<GenericovsSubmodulos> GenericovsSubmodulos { get; set; }
 }

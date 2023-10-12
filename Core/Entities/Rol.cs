@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Core.Entities;
-public class Rol
+public class Rol : BaseEntity
 {
     [Required]
     public string NombreRol { get; set; }
