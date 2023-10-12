@@ -17,6 +17,7 @@ public class BlockchainConfiguration : IEntityTypeConfiguration<Blockchain>
         builder.HasKey(x=>x.Id);
         builder.Property(x=>x.Id);
 
+        builder.Property(x=>x.HashGenerado).IsRequired().HasMaxLength(100);
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.HasOne(x=>x.Auditorias).WithMany(x=>x.Blockchains).HasForeignKey(x=>x.IdAuditoriaFk);

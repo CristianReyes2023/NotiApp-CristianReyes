@@ -16,7 +16,7 @@ public class TipoNotificacionConfiguration : IEntityTypeConfiguration<TipoNotifi
         builder.HasKey(x=>x.Id);
         builder.Property(x=>x.Id);
 
-        builder.Property(x=>x.NombreTipoNotificacion).IsRequired().HasMaxLength(50);
+        builder.Property(x=>x.NombreTipoNotificacion).IsRequired().HasMaxLength(80);
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.Property(x=>x.FechaModifacion).HasColumnType("date");
     }

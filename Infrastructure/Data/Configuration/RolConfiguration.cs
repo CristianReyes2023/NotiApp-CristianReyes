@@ -16,7 +16,7 @@ public class RolConfiguration : IEntityTypeConfiguration<Rol>
         builder.HasKey(x=>x.Id);
         builder.Property(x=>x.Id);
 
-        builder.Property(x=>x.NombreRol).IsRequired().HasMaxLength(50);
+        builder.Property(x=>x.NombreRol).IsRequired().HasMaxLength(100);
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.Property(x=>x.FechaModificacion).HasColumnType("date");
     }

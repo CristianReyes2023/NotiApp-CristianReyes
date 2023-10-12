@@ -16,7 +16,7 @@ public class TipoRequerimientoConfiguration : IEntityTypeConfiguration<TipoReque
         builder.HasKey(x=>x.Id);
         builder.Property(x=>x.Id);
 
-        builder.Property(x=>x.NombreTipoRequerimiento).IsRequired().HasMaxLength(50);
+        builder.Property(x=>x.NombreTipoRequerimiento).IsRequired().HasMaxLength(80);
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.Property(x=>x.FechaModificacion).HasColumnType("date");    
     }

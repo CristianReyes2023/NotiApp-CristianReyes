@@ -18,7 +18,7 @@ public class FormatoConfiguration : IEntityTypeConfiguration<Formato>
         builder.Property(x=>x.Id);
 
         builder.Property(x=>x.NombreFormato).IsRequired().HasMaxLength(50);
-        builder.Property(x=>x.FechaCreacion).HasColumnType("data");
+        builder.Property(x=>x.FechaCreacion).HasColumnType("date");
         builder.Property(x => x.FechaModificacion).HasColumnType("date");
         
     }
