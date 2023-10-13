@@ -101,6 +101,8 @@ public class EstadoNotificacionController : BaseController
         await _unitOfWork.SaveAsync();
         return estadoNotificacionDto;
     }
+
+
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

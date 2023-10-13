@@ -12,7 +12,7 @@ public class TipoNotificacion : BaseEntity
     [Required]
     public DateOnly FechaCreacion { get; set; }
     [Required]
-    public DateOnly FechaModifacion { get; set; }
+    public DateOnly FechaModificacion { get; set; }
     public ICollection<ModuloNotificacion> ModuloNotificaciones { get; set; }
     public ICollection<Blockchain> Blockchains { get; set; }
 }

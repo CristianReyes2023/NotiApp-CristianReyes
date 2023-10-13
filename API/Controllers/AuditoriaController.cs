@@ -49,8 +49,7 @@ public class AuditoriaController : BaseController
     public async Task<ActionResult<Auditoria>> Post(int id, [FromBody] AuditoriaDto auditoriaDto)
     {
         var auditoria = _mapper.Map<Auditoria>(auditoriaDto);
-        if (auditoria == null)
-            return BadRequest();
+
         if (auditoriaDto.FechaCreacion == DateOnly.MinValue)
         {
             auditoriaDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
@@ -63,6 +62,8 @@ public class AuditoriaController : BaseController
         }
         _unitOfWork.Auditorias.Add(auditoria);
         await _unitOfWork.SaveAsync();
+        if (auditoria == null)
+            return BadRequest();
 
         auditoriaDto.Id = auditoria.Id;
         return CreatedAtAction(nameof(Post), new { id = auditoria.Id }, auditoriaDto);
