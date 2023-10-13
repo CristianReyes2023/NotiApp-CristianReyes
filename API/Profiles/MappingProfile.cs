@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 namespace API.Profiles;
 public class MappingProfile : Profile
 {
-    protected MappingProfile()
+    public MappingProfile()
     {
         CreateMap<Auditoria,AuditoriaDto>().ReverseMap();
         CreateMap<Blockchain,BlockchainDto>().ReverseMap();

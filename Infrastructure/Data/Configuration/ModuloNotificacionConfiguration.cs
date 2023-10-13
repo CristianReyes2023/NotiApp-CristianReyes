@@ -20,7 +20,7 @@ public class ModuloNotificacionConfiguration : IEntityTypeConfiguration<ModuloNo
         builder.Property(x=>x.AsuntoNotificacion).IsRequired().HasMaxLength(80);
         builder.Property(x=>x.TextoNotificacion).IsRequired().HasMaxLength(2000);
         builder.Property(x=>x.FechaCreacion).HasColumnType("date");
-        builder.Property(x=>x.FechaModificación).HasColumnType("date");
+        builder.Property(x=>x.FechaModificacion).HasColumnType("date");
 
         builder.HasOne(x=>x.Radicados).WithMany(x=>x.ModuloNotificaciones).HasForeignKey(x=>x.IdRadicadosFk);
         builder.HasOne(x=>x.Formatos).WithMany(x=>x.ModuloNotificaciones).HasForeignKey(x=>x.IdFormatosFk);
