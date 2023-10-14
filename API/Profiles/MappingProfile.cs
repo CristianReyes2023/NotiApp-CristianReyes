@@ -24,7 +24,7 @@ public class MappingProfile : Profile
         CreateMap<PermisosGenericos,PermisosGenericosDto>().ReverseMap();
         CreateMap<Radicados,RadicadosDto>().ReverseMap();
         CreateMap<Rol,RolDto>().ReverseMap();
-        CreateMap<RolvsMaestro,RolvsMaestro>().ReverseMap();
+        CreateMap<RolvsMaestro,RolvsMaestroDto>().ReverseMap();
         CreateMap<SubModulos,SubmodulosDto>().ReverseMap();
         CreateMap<TipoNotificacion,TipoNotificacionDto>().ReverseMap();
         CreateMap<TipoRequerimiento,TipoRequerimientosDto>().ReverseMap();

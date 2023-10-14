@@ -35,7 +35,7 @@ public class PermisosGenericosController : BaseController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult<PermisosGenericosDto>> Get(int id)
     {
-        var permisosgen = await _unitOfWork.Formatos.GetByIdAsync(id);
+        var permisosgen = await _unitOfWork.PermisoGenericos.GetByIdAsync(id);
         if(permisosgen == null)
         {
             return NotFound();
