@@ -11,7 +11,7 @@
 
   3. [Creacion del proyecto Classlib](#Creacion-de-proyectos-Classlib)
 
-  4. [Agregar proyectos a la solucion](#Agregar-proyectos-a-la-solucion)
+  4. [Agregar proyectos a la solucion](#Agregar-proyectos-a-la-solucion.)
 
   5.[ Agregar la relacion entre proyectos](#Agregar-la-solucion-entre-proyectos)
 
@@ -37,7 +37,7 @@
   - [Ejemplo IUnitOfWork](#IUnitOfWork)
     
 
-### [INFRASTRUCTURE.](#INFRASTRUCTURE)
+### INFRASTRUCTURE.
 
 - #### Data
   
@@ -84,9 +84,9 @@
     
 - #### Conexion a la base de datos
   
-  - [Ejemplo conexión Db](#Conexion-a-la-base-de-datos)
+  - [Ejemplo conexión Db](#Conexion-base-de-datos)
     
-- #### [Program.cs](#Program.cs)
+- #### [Program.cs](#Program)
   
 
 ### Creacion de Proyecto
@@ -110,7 +110,7 @@ dotnet new classlib -o Core
 dotnet new classlib -o Infrastructure
 ```
 
-##### Agregar proyectos a la solucion
+##### Agregar proyectos a la solucion.
 
 ```dotnet
 dotnet sln add ApiAnimals
@@ -763,7 +763,7 @@ public class MappingProfile : Profile
 
 ```
 
-##### Conexion a la base de datos
+##### Conexion base de datos
 
 ```dotnet
 "ConnectionStrings": {
@@ -771,7 +771,7 @@ public class MappingProfile : Profile
   }
 ```
 
-##### Program.cs
+##### Program
 
 ```dotnet
 using System.Reflection;
