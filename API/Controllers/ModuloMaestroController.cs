@@ -45,67 +45,67 @@ public class ModuloMaestroController : BaseController
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<FormatoDto>> Post([FromBody] FormatoDto formatoDto)
+    public async Task<ActionResult<ModulosMaestroDto>> Post([FromBody] ModulosMaestroDto moduloDto)
     {
-        var formato = _mapper.Map<Formato>(formatoDto);
+        var modulo = _mapper.Map<ModulosMaestro>(moduloDto);
 
-        if(formato == null)
+        if(modulo == null)
             return BadRequest();
-        if (formatoDto.FechaCreacion == DateOnly.MinValue)
+        if (moduloDto.FechaCreacion == DateOnly.MinValue)
         {
-            formatoDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
-            formato.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
+            moduloDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
+            modulo.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
         }
-        if (formato.FechaModificacion == DateOnly.MinValue)
+        if (modulo.FechaModificacion == DateOnly.MinValue)
         {
-            formatoDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
-            formato.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
+            moduloDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
+            modulo.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
         }
-        _unitOfWork.Formatos.Add(formato);
+        _unitOfWork.ModulosMaestros.Add(modulo);
         await _unitOfWork.SaveAsync();
-        formatoDto.Id = formato.Id;
-        return CreatedAtAction(nameof(Post),new {id = formato.Id},formatoDto);
+        moduloDto.Id = modulo.Id;
+        return CreatedAtAction(nameof(Post),new {id = modulo.Id},moduloDto);
     }
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<FormatoDto>> Put(int id, [FromBody] FormatoDto formatoDto)
+    public async Task<ActionResult<ModulosMaestroDto>> Put(int id, [FromBody] ModulosMaestroDto moduloDto)
     {
-        if(formatoDto.Id == 0)
+        if(moduloDto.Id == 0)
         {
-            formatoDto.Id = id;
+            moduloDto.Id = id;
         }
-        if(formatoDto.Id != id)
+        if(moduloDto.Id != id)
         {
             return NotFound();
         }
-        var formato = _mapper.Map<Formato>(formatoDto);
-        if(formato==null)
+        var modulo = _mapper.Map<ModulosMaestro>(moduloDto);
+        if(modulo==null)
             return BadRequest();
-        if(formato.FechaCreacion == DateOnly.MinValue)
+        if(modulo.FechaCreacion == DateOnly.MinValue)
         {
-            formatoDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
-            formato.FechaCreacion = DateOnly.FromDateTime(DateTime.Now); 
+            moduloDto.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
+            modulo.FechaCreacion = DateOnly.FromDateTime(DateTime.Now); 
         }
-        if(formatoDto.FechaModificacion == DateOnly.MinValue)
+        if(moduloDto.FechaModificacion == DateOnly.MinValue)
         {
-            formatoDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
-            formato.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
+            moduloDto.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
+            modulo.FechaModificacion = DateOnly.FromDateTime(DateTime.Now);
         }
-        _unitOfWork.Formatos.Update(formato);
+        _unitOfWork.ModulosMaestros.Update(modulo);
         await _unitOfWork.SaveAsync();
-        return formatoDto;
+        return moduloDto;
     }
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<ActionResult> Delete(int id)
     {
-        var formato = await _unitOfWork.Formatos.GetByIdAsync(id);
-        if(formato == null)
+        var modulo = await _unitOfWork.ModulosMaestros.GetByIdAsync(id);
+        if(modulo == null)
             return NotFound();
-        _unitOfWork.Formatos.Remove(formato);
+        _unitOfWork.ModulosMaestros.Remove(modulo);
         await _unitOfWork.SaveAsync();
         return NoContent();
     }
