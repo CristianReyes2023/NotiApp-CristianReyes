@@ -43,7 +43,7 @@ public class TipoNotificacionController : BaseController
         return _mapper.Map<TipoNotificacionDto>(tiponoti);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<TipoNotificacionDto>> Post([FromBody] TipoNotificacionDto tiponotiDto)
     {

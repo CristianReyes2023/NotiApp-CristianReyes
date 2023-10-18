@@ -43,7 +43,7 @@ public class RolController : BaseController
         return _mapper.Map<RolDto>(rol);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<RolDto>> Post([FromBody] RolDto rolDto)
     {

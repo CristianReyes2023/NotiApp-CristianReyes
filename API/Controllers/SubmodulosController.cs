@@ -43,7 +43,7 @@ public class SubmodulosController : BaseController
         return _mapper.Map<SubmodulosDto>(submodulo);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<SubmodulosDto>> Post([FromBody] SubmodulosDto submoduloDto)
     {

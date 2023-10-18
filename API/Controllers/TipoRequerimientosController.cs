@@ -43,7 +43,7 @@ public class TipoRequerimientosController : BaseController
         return _mapper.Map<TipoRequerimientosDto>(tiporequi);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<TipoRequerimientosDto>> Post([FromBody] TipoRequerimientosDto tiporequiDto)
     {

@@ -43,7 +43,7 @@ public class GenericovsSubmodulosController : BaseController
         return _mapper.Map<GenericovsSubmodulosDto>(genericovsmodulos);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<GenericovsSubmodulosDto>> Post([FromBody] GenericovsSubmodulosDto genericovsSubmodulosDto)
     {

@@ -43,7 +43,7 @@ public class MaestrovsSubmodulosController : BaseController
         return _mapper.Map<MaestrosvsSubmodulosDto>(maestrovssub);
     }
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<MaestrosvsSubmodulosDto>> Post([FromBody] MaestrosvsSubmodulosDto maestrovssubDto)
     {
