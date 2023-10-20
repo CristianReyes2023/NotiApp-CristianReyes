@@ -38,8 +38,8 @@ public static class ApplicationServiceExtension
                 new RateLimitRule
                 {
                     Endpoint = "*",  // Si quiere usar todos ponga *
-                    Period = "NumberSecss", // Periodo de tiempo para hacer peticiones
-                    Limit = 10        // Numero de peticiones durante el periodo de tiempo
+                    Period = "10s", // Periodo de tiempo para hacer peticiones
+                    Limit = 2        // Numero de peticiones durante el periodo de tiempo
                 }
             };
         });
